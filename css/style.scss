@@ -1,0 +1,66 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+
+// .................... Mixin .............
+@mixin j-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+// .................... Mixin ............. End
+.w_h_auto{
+    width: auto!important;
+    height: auto!important;
+}
+.box_office_0{
+    border: 0;
+    outline: 0;
+    box-shadow: none;
+    &:focus,&:active{
+        @extend .box_office_0;
+    }
+}
+.overflow_hidden{
+    overflow: hidden;
+}
+header{
+    .nav-item{
+        .nav_white{
+            color: rgba(255, 255, 255, 0.498);
+            font-weight: bolder;
+            &:hover{
+                color: rgba(255, 255, 255, 0.677);
+            }
+            &.active{
+                color: #ffffff;
+            }
+        }
+    }
+}
+.section_1{
+    height: 450px;
+    background: #000 url('../img/mlm-1.png') center/contain no-repeat;
+    @media (max-width: 600px){
+        height: 350px;
+    }
+}
+.section_2{
+    .control_img{
+        height: 200px;
+        object-fit: cover;
+       width: 300px;
+    }
+    .control_output{
+       width: 250px;
+    }
+    @media (max-width: 600px){
+        .control_img,.control_output{
+            width: 100%;
+        }
+    }
+}
